@@ -1,5 +1,4 @@
 import { supabase } from "../supabaseClient";
-import logo from "../assets/logo.png";
 
 export default function LoginModal() {
 
@@ -14,9 +13,8 @@ export default function LoginModal() {
 
   return (
     <div className="login-page">
-     
       <div className="login-card">
-        <img src={logo} className="login-logo fade-in" alt="DeepTrace Logo" />
+        <img src="/deeptrace-icon.svg" alt="DeepTrace" className="login-logo" />
         <h1 className="brand-title fade-in">DeepTrace</h1>
         <p className="brand-subtitle fade-in-delay">AI Media Authenticator</p>
 
