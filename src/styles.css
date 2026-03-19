@@ -39,12 +39,17 @@ body::before {
 /* NAVBAR */
 /* ========================= */
 
+
+#root, .app {
+  padding-top: 0;
+  margin-top: 0;
+}
 .navbar {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 80px;
+  padding: 12px 80px;  /* was 30px, now 12px */
 }
 
 .navbar-left {

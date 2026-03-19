@@ -14,7 +14,7 @@ export default function LandingPage() {
     <>
       <nav className="navbar">
         <div className="navbar-left">
-          <img src={logo} alt="logo" className="logo-img" />
+          <img src="/deeptrace-icon.svg" alt="DeepTrace" height="48" />
           <div className="brand-text">
             <h1>DeepTrace</h1>
             <p>AI MEDIA AUTHENTICATION</p>
