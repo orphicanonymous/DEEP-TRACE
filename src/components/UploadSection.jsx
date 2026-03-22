@@ -1,5 +1,8 @@
-import { supabase } from "../supabaseClient";
 import { useState } from "react";
+
+import { supabase } from "../supabaseClient";
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://127.0.0.1:5000";
 
 export default function UploadSection() {
   const [file, setFile] = useState(null);
@@ -69,7 +72,7 @@ export default function UploadSection() {
       }, 400);
 
       // Step 5 — Send to Flask backend for analysis
-      const analyzeRes = await fetch("http://127.0.0.1:5000/analyze", {
+      const analyzeRes = await fetch(`${BACKEND_URL}/analyze`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -141,7 +144,7 @@ export default function UploadSection() {
       </button>
 
       {/* Progress bar */}
-      {(uploading || uploadProgress > 0) && (
+      {(uploading || (uploadProgress > 0 && !result)) && (
         <div className="upload-progress-wrap">
           <div className="upload-progress-head">
             <span>{uploadStatus}</span>

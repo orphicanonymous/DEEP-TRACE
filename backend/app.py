@@ -8,10 +8,11 @@ from pathlib import Path
 
 app = Flask(__name__)
 CORS(app)  # allows React frontend to call this API
+BASE_DIR = Path(__file__).resolve().parent
 
 # ── Load all 3 models once at startup ────────────────────────────────────────
 print('Starting DeepTrace backend...')
-engine = DeepTraceInference(models_dir='./models')
+engine = DeepTraceInference(models_dir=BASE_DIR / 'models')
 print('Backend ready!')
 
 
@@ -24,7 +25,7 @@ def health():
 # ── Main analysis endpoint ────────────────────────────────────────────────────
 @app.route('/analyze', methods=['POST'])
 def analyze():
-    data      = request.get_json()
+    data      = request.get_json(silent=True) or {}
     file_url  = data.get('file_url')
     file_name = data.get('file_name', 'upload')
 
