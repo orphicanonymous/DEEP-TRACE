@@ -65,6 +65,8 @@ __pycache__/
 venv/
 env/
 ENV/
+backend/venv/
+backend/__pycache__/
 *.egg-info/
 dist/
 build/
@@ -141,3 +143,7 @@ logs/
 .cache/
 coverage/
 .nyc_output/
+
+# Backend model artifacts
+backend/models/*.pt
+!backend/models/README.md
