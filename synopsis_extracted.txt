@@ -1,0 +1,271 @@
+--- PAGE 1 ---
+ Deep Trace: Forensic Detection of AI-Generated 
+ Audio-Video Content 
+ CAPSTONE PROJECT 
+ (CSEE-611P) 
+ A Synopsis 
+ Submitted to the 
+ Department of Computer Science & Engineering 
+ (Artificial Intelligence & Machine Learning) 
+ Submitted by: 
+ Student Name  University Roll No. 
+ Piyush Sharma                                               23010102043 
+ Rohit Kumar  23010102051 
+ Shivam Choudhary  23010102057 
+ Sidarth Sharma  23010102063 
+ Ujjwal Katoch  23010102070 
+ Under the Supervision of: 
+ Dr. Meenakshi Shruti Pal 
+ Associate Professor & Head of Department 
+ Department of Computer Science & Engineering (AI & ML) 
+ Jawaharlal Nehru Govt. Engineering College Sundernagar, Mandi, HP 
+ Jan-May, 2026 
+
+
+--- PAGE 2 ---
+ Project Synopsis 
+ Title  :  Deep Trace: Forensic Detection of AI-Generated Audio-video Content 
+ Problem Statement: 
+ The  rapid  evolution  of  generative  artificial  intelligence  has  made  it  increasingly  easy 
+ to  create  highly  realistic  synthetic  audio  and  video  content,  commonly  known  as 
+ deepfakes.  While  these  technologies  have  beneficial  applications  in  entertainment 
+ and  media  production,  they  also  pose  serious  risks  in  the  form  of  misinformation, 
+ identity  impersonation,  financial  fraud,  and  manipulation  of  public  opinion.These 
+ manipulated  media  forms  pose  serious  threats  to  digital  trust,  cybersecurity, 
+ journalism,  legal  systems,  and  public  safety  by  enabling  misinformation,  identity 
+ theft, and fraudulent activities. 
+ Objectives: 
+ ●  To  develop  a  web-based  deepfake  detection  system  with  automated 
+ preprocessing  and  multimodal  analysis  of  spatial,  temporal,  and  audio 
+ features. 
+ ●  To  implement  an  advanced  forensic  module  combining  rPPG-based  biological 
+ signal  extraction  and  cross-modal  consistency  analysis  for  robust  and 
+ explainable audio–video deepfake detection. 
+ ●  To  generate  probabilistic  authenticity  confidence  scores,  enabling  accountable 
+ and evidence-based validation of media integrity for reliable decision-making. 
+ Literature review: 
+ Table  1  provides  a  detailed  comparative  snapshot  of  the  existing  literature, 
+ systematically  summarizing  the  major  contributions,  methodologies,  and  findings  of 
+ each  of  the  cited  works.  It  highlights  the  diverse  approaches  adopted  by  different 
+ researchers,  ranging  from  traditional  techniques  to  advanced  machine  learning  and 
+ deep learning frameworks. 
+
+--- PAGE 3 ---
+ Table 1: Literature Review 
+ Paper & 
+ Author(s) 
+ Main Contribution / 
+ Methodology 
+ Library Used  Highlights/ 
+ Features 
+ Audio-Visual 
+ Deepfake 
+ Detection Using 
+ Local Temporal 
+ Inconsistencies 
+ (Astrid et al., 
+ 2025)[1] 
+ Detects deepfakes 
+ using temporal 
+ distance maps 
+ between audio and 
+ lip movements. 
+ Uses an 
+ attention-based 
+ network to model 
+ fine-grained timing 
+ mismatches. 
+ PyTorch/TensorF 
+ low, Librosa 
+ (audio), OpenCV 
+ Strong for  lip-sync 
+ mismatch 
+ detection  , 
+ audio-visual 
+ coherence, and 
+ real-time 
+ inconsistency 
+ analysis. 
+ Contextual 
+ Cross-Modal 
+ Attention for 
+ Audio-Visual 
+ Deepfake 
+ Detection 
+ (Katamneni & 
+ Rattani, 2024)[2] 
+ Multimodal RNN + 
+ cross-modal 
+ attention. Fuses 
+ audio transcriptions 
+ and visual frames 
+ for detection & 
+ localization. 
+ PyTorch, 
+ Whisper (ASR), 
+ Librosa, OpenCV 
+ Excellent 
+ cross-modal 
+ fusion. Works on 
+ AV-Deepfake1M, 
+ FakeAVCeleb. 
+ Matches your 
+ multimodal 
+ forensic module 
+ requirement. 
+ Local–Global 
+ Audio-Visual 
+ Feature Fusion for 
+ Deepfake 
+ Detection 
+ (Springer, 2025)[3] 
+ Combines local 
+ facial features (eye 
+ blink, lip motion) 
+ with global 
+ audio-visual 
+ embeddings using 
+ diffusion models. 
+ PyTorch, 
+ Librosa, OpenCV 
+ High accuracy 
+ multimodal fusion; 
+ advanced 
+ representation 
+ learning; useful for 
+ robust feature 
+ extraction. 
+ Audio-Visual 
+ Deepfake 
+ Detection Using 
+ Articulatory 
+ Representation 
+ (Elsevier, 2024)[4] 
+ Uses articulatory 
+ lip-movement 
+ physics + audio 
+ cues to detect 
+ mismatched speech 
+ production. 
+ TensorFlow/Kera 
+ s, Librosa 
+ Strong for 
+ speech-lip 
+ correlation, robust 
+ to noisy audio. 
+ Ideal for 
+ temporal/spatial 
+ mismatch 
+ analysis. 
+ Biometric Residual 
+ Learning for 
+ Deepfake 
+ Detection 
+ (Nishimura et al., 
+ 2025)[5] 
+ Uses 
+ micro-expressions + 
+ eye-blink frequency 
+ + skin-reflection 
+ patterns as residual 
+ cues. 
+ Python, 
+ OpenCV, 
+ PyTorch 
+ Excellent for 
+ biological-signal 
+ inconsistencies, 
+ aligns with the 
+ multimodal 
+ forensic module. 
+
+--- PAGE 4 ---
+ Proposed Methodology: 
+ Fig.  1  presents  the  DeepTrace  multimodal  forensic  system  designed  to  authenticate 
+ AI-generated  audio–video  content.  The  input  media  stream  is  processed  through 
+ parallel  visual  and  audio  pipelines,  where  video  frames  undergo  spatial  and  temporal 
+ feature  extraction  while  the  audio  track  is  analyzed  for  spectral  and  speech-based 
+ irregularities.  A  cross-modal  transformer  evaluates  lip–speech  synchronization  and 
+ motion–audio  alignment,  supported  by  an  rPPG  module  that  derives  heartbeat 
+ signals  from  facial  color  variations  to  assess  biological  authenticity.  These  cues  are 
+ combined  within  a  unified  forensic  engine,  which  generates  a  probabilistic 
+ authenticity  score  along  with  interpretable  evidence  such  as  heatmaps  and  anomaly 
+ timestamps, delivering a transparent and reliable deepfake detection output. 
+ Technology Stack: 
+ Fig.  2  illustrates  the  complete  technology  stack  of  the  DeepTrace  system,  structured 
+ across  frontend,  backend,  deep  learning,  datasets,  and  database  layers.  The 
+ frontend  interface  is  developed  using  HTML,  CSS,  JavaScript,  and  React.js  to 
+ provide  an  interactive  and  user-friendly  media  upload  environment.  The  backend  is 
+ implemented  in  Python  using  Flask/FastAPI  to  handle  request  processing, 
+ automated preprocessing, and AI model inference. 
+ DeepFakeShield: 
+ Cross-Modal 
+ Evidence 
+ Aggregation 
+ (Rahman et al., 
+ 2023)[6] 
+ Extracts textual, 
+ auditory, and 
+ visual features; 
+ uses graph neural 
+ networks for 
+ cross-modal 
+ evidence linking. 
+ PyTorch 
+ Geometric, 
+ Librosa, OpenCV 
+ Good for 
+ generating 
+ probabilistic 
+ authenticity scores 
+ through evidence 
+ graphs. 
+ DeepLip: 
+ Articulatory Motion 
+ Analysis for 
+ Deepfake Speech 
+ Detection (Silva et 
+ al., 2025)[7] 
+ Tracks 
+ lip-formation 
+ shapes and 
+ compares with 
+ expected 
+ phoneme classes 
+ using an 
+ articulatory model. 
+ TensorFlow, 
+ MediaPipe 
+ Strong mismatch 
+ detection between 
+ audio and lip 
+ movements; ideal 
+ for AV coherence. 
+
+--- PAGE 5 ---
+ Fig. 1 Graphical Abstract View 
+
+
+--- PAGE 6 ---
+ Fig. 2 Technology Stack 
+ References: 
+ [1] Astrid, A., et al., “Audio-Visual Deepfake Detection Using Local Temporal 
+ Inconsistencies,”  IEEE Conference on Computer Vision and Pattern Recognition 
+ (CVPR)  , 2025. 
+ [2] Katamneni, R., and Rattani, A., “Contextual Cross-Modal Attention for 
+ Audio-Visual Deepfake Detection,”  Proceedings of the IEEE/CVF Conference on 
+ Computer Vision and Pattern Recognition Workshops (CVPRW)  , 2024. 
+ [3] Springer, A., et al., “Local–Global Audio-Visual Feature Fusion for Deepfake 
+ Detection,”  Pattern Recognition  , Elsevier, 2025. 
+ [4]Elsevier, “Audio-Visual Deepfake Detection Using Articulatory Representation,” 
+ Information Sciences  , Elsevier, 2024. 
+ [5]Nishimura, K., Ito, M., Zhang, R., & Lee, S. (2025).  Biometric Residual Learning 
+ for Deepfake Detection  . Proc. IEEE CVPR, pp. 1123–1132. 
+ [6]Rahman, F., Chowdhury, A., & Kumar, V. (2023).  DeepFakeShield: Cross-Modal 
+ Evidence Aggregation for Forgery Detection  . Proc. IEEE ICME, pp. 874–881. 
+ [7]Silva, T., Morais, D., & Fernandes, P. (2025).  DeepLip: Articulatory Motion 
+ Analysis for Deepfake Speech Detection  . Proc. IEEE ICASSP, pp. 4201–4205. 
+
+
+--- PAGE 7 ---
+

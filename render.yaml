@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: deeptrace-backend
-    runtime: python
-    rootDir: backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
-    healthCheckPath: /health
