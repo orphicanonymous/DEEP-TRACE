@@ -14,7 +14,7 @@ DeepTrace is an AI deepfake detection web application with an accountability-foc
 ### From Repo Root
 
 ```bash
-npm install
+npm install.  
 npm run dev
 ```
 
