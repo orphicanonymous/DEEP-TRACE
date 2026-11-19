@@ -42,7 +42,7 @@ Create `frontend/.env` from `frontend/.env.example`.
 
 ```env
 VITE_BACKEND_URL=http://127.0.0.1:5000
-VITE_SUPABASE_URL=https://ktludhxrewwbewkhcnqx.supabase.co
+VITE_SUPABASE_PROJECT_KEY=your-supabase-project-key
 VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
 ```
 
